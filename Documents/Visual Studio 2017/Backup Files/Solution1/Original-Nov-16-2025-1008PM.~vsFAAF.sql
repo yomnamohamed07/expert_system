@@ -1,7 +1,0 @@
-SELECT TOP (1000) [Id]
-      ,[NameAr]
-      ,[NameEn]
-      ,[Address]
-      ,[PhoneNumber]
-      ,[DepartmentId]
-  FROM [Skola.Api].[dbo].[Student]
