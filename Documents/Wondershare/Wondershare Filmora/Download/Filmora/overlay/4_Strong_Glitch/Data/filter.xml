@@ -1,0 +1,13 @@
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <Filter>
+        <GUID>c2bde377-0c7d-4ef8-8616-29b941b1fabe</GUID>
+        <Name>Strong Glitch</Name>
+        <Transition>0</Transition>
+        <VideoOverlay>
+            <VideoFile>Strong Glitch.mp4</VideoFile>
+            <BlendType>8</BlendType>
+            <MultiLayer>Strong Glitch.ml</MultiLayer>
+        </VideoOverlay>
+    </Filter>
+    	

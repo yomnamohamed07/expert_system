@@ -1,0 +1,334 @@
+<!DOCTYPE ShortcutSettings>
+<ShortcutSettings>
+    <default_type type="0"/>
+    <item_list type="0">
+        <item mode="0" key="Ctrl+N" commandRow="0" editable="1">New Project</item>
+        <item mode="0" key="Ctrl+O" commandRow="1" editable="1">Open Project</item>
+        <item mode="0" key="Ctrl+S" commandRow="2" editable="1">Save Project</item>
+        <item mode="0" key="Ctrl+Shift+S" commandRow="3" editable="1">Save Project As</item>
+        <item mode="0" key="Ctrl+Shift+A" commandRow="4" editable="1">Archive Project</item>
+        <item mode="0" key="Ctrl+I" commandRow="5" editable="1">Import Media Files</item>
+        <item mode="0" key="Alt+R" commandRow="6" editable="1">Record Voiceover</item>
+        <item mode="99" key="Ctrl+Shift+," commandRow="7" editable="1">Preferences</item>
+        <item mode="99" key="Alt+F4" commandRow="8" editable="1">Exit</item>
+        <item mode="0" key="Ctrl+Alt+N" commandRow="9" editable="1">Add Folder</item>
+        <item mode="1" key="Ctrl+Z" commandRow="1000" editable="1">Undo</item>
+        <item mode="1" key="Ctrl+Y" commandRow="1001" editable="1">Redo</item>
+        <item mode="1" key="Ctrl+X" commandRow="1002" editable="1">Cut</item>
+        <item mode="1" key="Ctrl+C" commandRow="1003" editable="1">Copy</item>
+        <item mode="1" key="Ctrl+V" commandRow="1004" editable="1">Paste</item>
+        <item mode="1" key="Del" commandRow="1005" editable="1">Delete</item>
+        <item mode="1" key="Shift+Del" commandRow="1006" editable="1">Ripple Delete</item>
+        <item mode="1" key="Alt+Del" commandRow="1007" editable="1">Close Gap</item>
+        <item mode="1" key="Ctrl+A" commandRow="1008" editable="1">Select All</item>
+        <item mode="1" key="Ctrl+Alt+C" commandRow="1009" editable="1">Copy Effects</item>
+        <item mode="1" key="Ctrl+Alt+V" commandRow="1010" editable="1">Paste Effects</item>
+        <item mode="1" key="Alt+Left" commandRow="1011" editable="1">Nudge Left</item>
+        <item mode="1" key="Alt+Right" commandRow="1012" editable="1">Nudge Right</item>
+        <item mode="1" key="Alt+Up" commandRow="1013" editable="1">Nudge Up</item>
+        <item mode="1" key="Alt+Down" commandRow="1014" editable="1">Nudge Down</item>
+        <item mode="1" key="Ctrl+D" commandRow="1015" editable="1">Duplicate</item>
+        <item mode="2" key="Alt+E" commandRow="2000" editable="1">Show Properties</item>
+        <item mode="2" key="Ctrl+B" commandRow="2001" editable="1">Split</item>
+        <item mode="2" key="Alt+[" commandRow="2002" editable="1">Trim Start to Playhead</item>
+        <item mode="2" key="Alt+]" commandRow="2003" editable="1">Trim End to Playhead</item>
+        <item mode="2" key="Alt+C" commandRow="2004" editable="1">Crop and Zoom</item>
+        <item mode="2" key="Ctrl+Alt+Right" commandRow="2005" editable="1">Rotate 90 CW</item>
+        <item mode="2" key="Ctrl+Alt+Left" commandRow="2006" editable="1">Rotate 90 CCW</item>
+        <item mode="2" key="Ctrl+G" commandRow="2007" editable="1">Group</item>
+        <item mode="2" key="Ctrl+Alt+G" commandRow="2008" editable="1">Ungroup</item>
+        <item mode="2" key="Ctrl+R" commandRow="2009" editable="1">Speed and Duration</item>
+        <item mode="2" key="Alt+F" commandRow="2010" editable="1">Add Freeze Frame</item>
+        <item mode="2" key="Ctrl+Alt+D" commandRow="2011" editable="1">Detach Audio</item>
+        <item mode="2" key="Ctrl+Shift+M" commandRow="2012" editable="1">Mute</item>
+        <item mode="2" key="Alt+S" commandRow="2013" editable="1">Stabilization</item>
+        <item mode="2" key="Ctrl+Shift+C" commandRow="2014" editable="1">Color Correction</item>
+        <item mode="2" key="Ctrl+Shift+G" commandRow="2015" editable="1">Green Screen</item>
+        <item mode="2" key="Alt+1" commandRow="2016" editable="1">Red Color Mark</item>
+        <item mode="2" key="Alt+2" commandRow="2017" editable="1">Orange Color Mark</item>
+        <item mode="2" key="Alt+3" commandRow="2018" editable="1">Yellow Color Mark</item>
+        <item mode="2" key="Alt+4" commandRow="2019" editable="1">Green Color Mark</item>
+        <item mode="2" key="Alt+5" commandRow="2020" editable="1">CyanBlue Color Mark</item>
+        <item mode="2" key="Alt+6" commandRow="2021" editable="1">Blue Color Mark</item>
+        <item mode="2" key="Alt+7" commandRow="2022" editable="1">Purple Color Mark</item>
+        <item mode="2" key="Alt+8" commandRow="2023" editable="1">Gray Color Mark</item>
+        <item mode="2" key="Alt+Shift+`" commandRow="2024" editable="1">Select all Clips with the Same Color Mark</item>
+        <item mode="2" key="Enter" commandRow="2025" editable="1">Render Preview</item>
+        <item mode="2" key="[" commandRow="2027" editable="1">Previous Key Frame</item>
+        <item mode="2" key="]" commandRow="2028" editable="1">Next Key Frame</item>
+        <item mode="2" key="Alt+X" commandRow="2029" editable="1">Motion Track</item>
+        <item mode="2" key="Alt+M" commandRow="2030" editable="1">Color Match</item>
+        <item mode="99" key="Ctrl+Alt+K" commandRow="2031" editable="1">Keyboard Shortcuts</item>
+        <item mode="2" key="Shift+I" commandRow="2032" editable="1">Insert</item>
+        <item mode="2" key="Shift+O" commandRow="2033" editable="1">Overwrite</item>
+        <item mode="2" key="F2" commandRow="2035" editable="1">Rename</item>
+        <item mode="2" key="Ctrl+Shift+R" commandRow="2036" editable="1">Reveal in Explorer</item>
+        <item mode="2" key="Alt+A" commandRow="2037" editable="1">Apply</item>
+        <item mode="2" key="Shift+F" commandRow="2038" editable="1">Add to Favourite</item>
+        <item mode="2" key="Alt+K" commandRow="2039" editable="1">Keyframing</item>
+        <item mode="2" key="Ctrl+F" commandRow="2040" editable="1">Crop to Fit</item>
+        <item mode="1" key="X" commandRow="2041" editable="1">Export selected range</item>
+        <item mode="1" key="Shift+X" commandRow="2042" editable="1">Cancel the selected range</item>
+        <item mode="2" key="C" commandRow="2043" editable="1">Quick Split Mode</item>
+        <item mode="2" key="V" commandRow="2044" editable="1">Select Mode</item>
+		<item mode="2" editable="1" commandRow="2045" key="S">Open AudioRemix</item>
+		<item mode="2" editable="1" commandRow="2046" key="Shift+S">Close AudioRemix</item>
+        <item mode="3" key="Space" commandRow="3000" editable="1">Play/Pause</item>
+        <item mode="3" key="Ctrl+/" commandRow="3001" editable="1">Stop</item>
+        <item mode="3" key="Alt+Enter" commandRow="3002" editable="1">Full Screen/Restore</item>
+        <item mode="3" key="Ctrl+Alt+S" commandRow="3003" editable="1">Snapshot</item>
+        <item mode="3" key="Left" commandRow="3004" editable="1">Previous Frame</item>
+        <item mode="3" key="Right" commandRow="3005" editable="1">Next Frame</item>
+        <item mode="3" key="Up" commandRow="3006" editable="1">Previous Edit Point</item>
+        <item mode="3" key="Down" commandRow="3007" editable="1">Next Edit Point</item>
+        <item mode="3" key="Shift+Left" commandRow="3008" editable="1">Go to Previous Second</item>
+        <item mode="3" key="Shift+Right" commandRow="3009" editable="1">Go to Next Second</item>
+        <item mode="3" key="Shift+Up" commandRow="3010" editable="1">Go to Previous Marker</item>
+        <item mode="3" key="Shift+Down" commandRow="3011" editable="1">Go to Next Marker</item>
+        <item mode="3" key="Home" commandRow="3012" editable="1">Go to Project Beginning</item>
+        <item mode="3" key="End" commandRow="3013" editable="1">Go to Project End</item>
+        <item mode="3" key="Shift+Home" commandRow="3014" editable="1">Go to Selected Clip Start</item>
+        <item mode="3" key="Shift+End" commandRow="3015" editable="1">Go to Selected Clip End</item>
+        <item mode="3" key="Ctrl+=" commandRow="3016" editable="1">Zoom in</item>
+        <item mode="3" key="Ctrl+-" commandRow="3017" editable="1">Zoom out</item>
+        <item mode="3" key="Shift+Z" commandRow="3018" editable="1">Zoom to Fit Timeline</item>
+        <item mode="3" key="Ctrl+Left" commandRow="3020" editable="1">Select Previous</item>
+        <item mode="3" key="Ctrl+Right" commandRow="3021" editable="1">Select Next</item>
+        <item mode="4" key="I" commandRow="4000" editable="1">Mark In</item>
+        <item mode="4" key="O" commandRow="4001" editable="1">Mark Out</item>
+        <item mode="4" key="Ctrl+Shift+X" commandRow="4002" editable="1">Clear In and Out</item>
+        <item mode="4" key="Alt+I" commandRow="4003" editable="1">Remove In point</item>
+        <item mode="4" key="Alt+O" commandRow="4004" editable="1">Remove Out point</item>
+        <item mode="4" key="M" commandRow="4005" editable="1">Add Marker</item>
+        <item mode="4" key="Shift+M" commandRow="4006" editable="1">Edit Marker</item>
+        <item mode="5" key="F1" commandRow="5000" editable="1">Help</item>
+        <item mode="5" key="Ctrl+E" commandRow="5001" editable="1">Export</item>
+        <item mode="6" key="Return" commandRow="6001" editable="1">Edit Finished</item>
+        <item mode="2" key="Alt+Left Click" commandRow="2026" editable="0">Add Key Frame</item>
+        <item mode="2" key="Alt+Mouse Drag" commandRow="2034" editable="0">Replace</item>
+        <item mode="3" key="ESC" commandRow="3019" editable="0">close Dialog</item>
+        <item mode="3" key="Alt+Scroll Up" commandRow="3022" editable="0">View Left</item>
+        <item mode="3" key="Scroll Down" commandRow="3023" editable="0">View Down</item>
+		<item mode="2" key="Alt+Mouse Drag" commandRow="2047" editable="0">Adjust the Bezier curve</item>
+    </item_list>
+    <item_list type="1">
+        <item mode="0" key="Ctrl+N" commandRow="0" editable="1">New Project</item>
+        <item mode="0" key="Ctrl+O" commandRow="1" editable="1">Open Project</item>
+        <item mode="0" key="Ctrl+S" commandRow="2" editable="1">Save Project</item>
+        <item mode="0" key="Ctrl+Shift+S" commandRow="3" editable="1">Save Project As</item>
+        <item mode="0" key="Ctrl+Shift+A" commandRow="4" editable="1">Archive Project</item>
+        <item mode="0" key="Ctrl+I" commandRow="5" editable="1">Import Media Files</item>
+        <item mode="0" key="Alt+Shift+A" commandRow="6" editable="1">Record Voiceover</item>
+        <item mode="99" key="Ctrl+," commandRow="7" editable="1">Preferences</item>
+        <item mode="99" key="Ctrl+Q" commandRow="8" editable="1">Exit</item>
+        <item mode="0" key="Ctrl+Shift+N" commandRow="9" editable="1">Add Folder</item>
+        <item mode="1" key="Ctrl+Z" commandRow="1000" editable="1">Undo</item>
+        <item mode="1" key="Ctrl+Shift+Z" commandRow="1001" editable="1">Redo</item>
+        <item mode="1" key="Ctrl+X" commandRow="1002" editable="1">Cut</item>
+        <item mode="1" key="Ctrl+C" commandRow="1003" editable="1">Copy</item>
+        <item mode="1" key="Ctrl+V" commandRow="1004" editable="1">Paste</item>
+        <item mode="1" key="Del" commandRow="1005" editable="1">Delete</item>
+        <item mode="1" key="Shift+Del" commandRow="1006" editable="1">Ripple Delete</item>
+        <item mode="1" key="Alt+Del" commandRow="1007" editable="1">Close Gap</item>
+        <item mode="1" key="Ctrl+A" commandRow="1008" editable="1">Select All</item>
+        <item mode="1" key="Ctrl+Alt+C" commandRow="1009" editable="1">Copy Effects</item>
+        <item mode="1" key="Ctrl+Alt+A" commandRow="1010" editable="1">Paste Effects</item>
+        <item mode="1" key="," commandRow="1011" editable="1">Nudge Left</item>
+        <item mode="1" key="." commandRow="1012" editable="1">Nudge Right</item>
+        <item mode="1" key="Alt+Up" commandRow="1013" editable="1">Nudge Up</item>
+        <item mode="1" key="Alt+Down" commandRow="1014" editable="1">Nudge Down</item>
+        <item mode="1" key="Ctrl+D" commandRow="1015" editable="1">Duplicate</item>
+        <item mode="2" key="Alt+E" commandRow="2000" editable="1">Show Properties</item>
+        <item mode="2" key="Ctrl+B" commandRow="2001" editable="1">Split</item>
+        <item mode="2" key="Alt+[" commandRow="2002" editable="1">Trim Start to Playhead</item>
+        <item mode="2" key="Alt+]" commandRow="2003" editable="1">Trim End to Playhead</item>
+        <item mode="2" key="Shift+C" commandRow="2004" editable="1">Crop and Zoom</item>
+        <item mode="2" key="Ctrl+Alt+Right" commandRow="2005" editable="1">Rotate 90 CW</item>
+        <item mode="2" key="Ctrl+Alt+Left" commandRow="2006" editable="1">Rotate 90 CCW</item>
+        <item mode="2" key="Ctrl+G" commandRow="2007" editable="1">Group</item>
+        <item mode="2" key="Ctrl+Alt+G" commandRow="2008" editable="1">Ungroup</item>
+        <item mode="2" key="Ctrl+R" commandRow="2009" editable="1">Speed and Duration</item>
+        <item mode="2" key="Alt+F" commandRow="2010" editable="1">Add Freeze Frame</item>
+        <item mode="2" key="Ctrl+Alt+D" commandRow="2011" editable="1">Detach Audio</item>
+        <item mode="2" key="Ctrl+Shift+M" commandRow="2012" editable="1">Mute</item>
+        <item mode="2" key="Alt+S" commandRow="2013" editable="1">Stabilization</item>
+        <item mode="2" key="Ctrl+Shift+C" commandRow="2014" editable="1">Color Correction</item>
+        <item mode="2" key="Ctrl+Shift+G" commandRow="2015" editable="1">Green Screen</item>
+        <item mode="2" key="Alt+1" commandRow="2016" editable="1">Red Color Mark</item>
+        <item mode="2" key="Alt+2" commandRow="2017" editable="1">Orange Color Mark</item>
+        <item mode="2" key="Alt+3" commandRow="2018" editable="1">Yellow Color Mark</item>
+        <item mode="2" key="Alt+4" commandRow="2019" editable="1">Green Color Mark</item>
+        <item mode="2" key="Alt+5" commandRow="2020" editable="1">CyanBlue Color Mark</item>
+        <item mode="2" key="Alt+6" commandRow="2021" editable="1">Blue Color Mark</item>
+        <item mode="2" key="Alt+7" commandRow="2022" editable="1">Purple Color Mark</item>
+        <item mode="2" key="Alt+8" commandRow="2023" editable="1">Gray Color Mark</item>
+        <item mode="2" key="Alt+`" commandRow="2024" editable="1">Select all Clips with the Same Color Mark</item>
+        <item mode="2" key="Enter" commandRow="2025" editable="1">Render Preview</item>
+        <item mode="2" key="Alt+;" commandRow="2027" editable="1">Previous Key Frame</item>
+        <item mode="2" key="Alt+'" commandRow="2028" editable="1">Next Key Frame</item>
+        <item mode="2" key="Alt+X" commandRow="2029" editable="1">Motion Track</item>
+        <item mode="2" key="Ctrl+Alt+M" commandRow="2030" editable="1">Color Match</item>
+        <item mode="99" key="Ctrl+Alt+K" commandRow="2031" editable="1">Keyboard Shortcuts</item>
+        <item mode="2" key="W" commandRow="2032" editable="1">Insert</item>
+        <item mode="2" key="D" commandRow="2033" editable="1">Overwrite</item>
+        <item mode="2" key="F2" commandRow="2035" editable="1">Rename</item>
+        <item mode="2" key="Ctrl+Shift+R" commandRow="2036" editable="1">Reveal in Explorer</item>
+        <item mode="2" key="Alt+A" commandRow="2037" editable="1">Apply</item>
+        <item mode="2" key="Shift+F" commandRow="2038" editable="1">Add to Favourite</item>
+        <item mode="2" key="Alt+K" commandRow="2039" editable="1">Keyframing</item>
+        <item mode="2" key="Ctrl+F" commandRow="2040" editable="1">Crop to Fit</item>
+        <item mode="1" key="X" commandRow="2041" editable="1">Export selected range</item>
+        <item mode="1" key="Shift+X" commandRow="2042" editable="1">Cancel the selected range</item>
+        <item mode="2" key="C" commandRow="2043" editable="1">Quick Split Mode</item>
+        <item mode="2" key="V" commandRow="2044" editable="1">Select Mode</item>
+		<item mode="2" editable="1" commandRow="2045" key="S">Open AudioRemix</item>
+		<item mode="2" editable="1" commandRow="2046" key="Shift+S">Close AudioRemix</item>
+        <item mode="3" key="Space" commandRow="3000" editable="1">Play/Pause</item>
+        <item mode="3" key="Ctrl+/" commandRow="3001" editable="1">Stop</item>
+        <item mode="3" key="Ctrl+Shift+F" commandRow="3002" editable="1">Full Screen/Restore</item>
+        <item mode="3" key="Ctrl+Shift+D" commandRow="3003" editable="1">Snapshot</item>
+        <item mode="3" key="Left" commandRow="3004" editable="1">Previous Frame</item>
+        <item mode="3" key="Right" commandRow="3005" editable="1">Next Frame</item>
+        <item mode="3" key="Up" commandRow="3006" editable="1">Previous Edit Point</item>
+        <item mode="3" key="Down" commandRow="3007" editable="1">Next Edit Point</item>
+        <item mode="3" key="Shift+Left" commandRow="3008" editable="1">Go to Previous Second</item>
+        <item mode="3" key="Shift+Right" commandRow="3009" editable="1">Go to Next Second</item>
+        <item mode="3" key="Shift+Up" commandRow="3010" editable="1">Go to Previous Marker</item>
+        <item mode="3" key="Shift+Down" commandRow="3011" editable="1">Go to Next Marker</item>
+        <item mode="3" key="Home" commandRow="3012" editable="1">Go to Project Beginning</item>
+        <item mode="3" key="End" commandRow="3013" editable="1">Go to Project End</item>
+        <item mode="3" key="Shift+I" commandRow="3014" editable="1">Go to Selected Clip Start</item>
+        <item mode="3" key="Shift+O" commandRow="3015" editable="1">Go to Selected Clip End</item>
+        <item mode="3" key="Ctrl+=" commandRow="3016" editable="1">Zoom in</item>
+        <item mode="3" key="Ctrl+-" commandRow="3017" editable="1">Zoom out</item>
+        <item mode="3" key="Shift+Z" commandRow="3018" editable="1">Zoom to Fit Timeline</item>
+        <item mode="3" key="Ctrl+Left" commandRow="3020" editable="1">Select Previous</item>
+        <item mode="3" key="Ctrl+Right" commandRow="3021" editable="1">Select Next</item>
+        <item mode="4" key="I" commandRow="4000" editable="1">Mark In</item>
+        <item mode="4" key="O" commandRow="4001" editable="1">Mark Out</item>
+        <item mode="4" key="Ctrl+Shift+X" commandRow="4002" editable="1">Clear In and Out</item>
+        <item mode="4" key="Alt+I" commandRow="4003" editable="1">Remove In point</item>
+        <item mode="4" key="Alt+O" commandRow="4004" editable="1">Remove Out point</item>
+        <item mode="4" key="M" commandRow="4005" editable="1">Add Marker</item>
+        <item mode="4" key="Shift+M" commandRow="4006" editable="1">Edit Marker</item>
+        <item mode="5" key="F1" commandRow="5000" editable="1">Help</item>
+        <item mode="5" key="Ctrl+E" commandRow="5001" editable="1">Export</item>
+        <item mode="6" key="Return" commandRow="6001" editable="1">Edit Finished</item>
+        <item mode="2" key="Alt+Left Click" commandRow="2026" editable="0">Add Key Frame</item>
+        <item mode="2" key="Alt+Mouse Drag" commandRow="2034" editable="0">Replace</item>
+        <item mode="3" key="ESC" commandRow="3019" editable="0">close Dialog</item>
+        <item mode="3" key="Alt+Scroll Up" commandRow="3022" editable="0">View Left</item>
+        <item mode="3" key="Scroll Down" commandRow="3023" editable="0">View Down</item>
+		<item mode="2" key="Alt+Mouse Drag" commandRow="2047" editable="0">Adjust the Bezier curve</item>
+    </item_list>
+    <item_list type="2">
+        <item mode="0" key="Ctrl+N" commandRow="0" editable="1">New Project</item>
+        <item mode="0" key="Ctrl+O" commandRow="1" editable="1">Open Project</item>
+        <item mode="0" key="Ctrl+S" commandRow="2" editable="1">Save Project</item>
+        <item mode="0" key="Ctrl+Shift+S" commandRow="3" editable="1">Save Project As</item>
+        <item mode="0" key="Ctrl+Shift+A" commandRow="4" editable="1">Archive Project</item>
+        <item mode="0" key="Ctrl+I" commandRow="5" editable="1">Import Media Files</item>
+        <item mode="0" key="Alt+R" commandRow="6" editable="1">Record Voiceover</item>
+        <item mode="99" key="Ctrl+Shift+," commandRow="7" editable="1">Preferences</item>
+        <item mode="99" key="Ctrl+Q" commandRow="8" editable="1">Exit</item>
+        <item mode="0" key="Ctrl+Alt+N" commandRow="9" editable="1">Add Folder</item>
+        <item mode="1" key="Ctrl+Z" commandRow="1000" editable="1">Undo</item>
+        <item mode="1" key="Ctrl+Shift+Z" commandRow="1001" editable="1">Redo</item>
+        <item mode="1" key="Ctrl+X" commandRow="1002" editable="1">Cut</item>
+        <item mode="1" key="Ctrl+C" commandRow="1003" editable="1">Copy</item>
+        <item mode="1" key="Ctrl+V" commandRow="1004" editable="1">Paste</item>
+        <item mode="1" key="Del" commandRow="1005" editable="1">Delete</item>
+        <item mode="1" key="Shift+Del" commandRow="1006" editable="1">Ripple Delete</item>
+        <item mode="1" key="Alt+Del" commandRow="1007" editable="1">Close Gap</item>
+        <item mode="1" key="Ctrl+A" commandRow="1008" editable="1">Select All</item>
+        <item mode="1" key="Ctrl+Alt+C" commandRow="1009" editable="1">Copy Effects</item>
+        <item mode="1" key="Ctrl+Alt+V" commandRow="1010" editable="1">Paste Effects</item>
+        <item mode="1" key="Ctrl+Left" commandRow="1011" editable="1">Nudge Left</item>
+        <item mode="1" key="Ctrl+Right" commandRow="1012" editable="1">Nudge Right</item>
+        <item mode="1" key="Alt+Up" commandRow="1013" editable="1">Nudge Up</item>
+        <item mode="1" key="Alt+Down" commandRow="1014" editable="1">Nudge Down</item>
+        <item mode="1" key="Ctrl+D" commandRow="1015" editable="1">Duplicate</item>
+        <item mode="2" key="Alt+E" commandRow="2000" editable="1">Show Properties</item>
+        <item mode="2" key="Ctrl+K" commandRow="2001" editable="1">Split</item>
+        <item mode="2" key="Q" commandRow="2002" editable="1">Trim Start to Playhead</item>
+        <item mode="2" key="W" commandRow="2003" editable="1">Trim End to Playhead</item>
+        <item mode="2" key="Alt+C" commandRow="2004" editable="1">Crop and Zoom</item>
+        <item mode="2" key="Ctrl+Alt+Right" commandRow="2005" editable="1">Rotate 90 CW</item>
+        <item mode="2" key="Ctrl+Alt+Left" commandRow="2006" editable="1">Rotate 90 CCW</item>
+        <item mode="2" key="Ctrl+G" commandRow="2007" editable="1">Group</item>
+        <item mode="2" key="Ctrl+Alt+G" commandRow="2008" editable="1">Ungroup</item>
+        <item mode="2" key="Ctrl+R" commandRow="2009" editable="1">Speed and Duration</item>
+        <item mode="2" key="Alt+F" commandRow="2010" editable="1">Add Freeze Frame</item>
+        <item mode="2" key="Ctrl+L" commandRow="2011" editable="1">Detach Audio</item>
+        <item mode="2" key="Ctrl+Shift+M" commandRow="2012" editable="1">Mute</item>
+        <item mode="2" key="Alt+S" commandRow="2013" editable="1">Stabilization</item>
+        <item mode="2" key="Ctrl+Shift+C" commandRow="2014" editable="1">Color Correction</item>
+        <item mode="2" key="Ctrl+Shift+G" commandRow="2015" editable="1">Green Screen</item>
+        <item mode="2" key="Alt+1" commandRow="2016" editable="1">Red Color Mark</item>
+        <item mode="2" key="Alt+2" commandRow="2017" editable="1">Orange Color Mark</item>
+        <item mode="2" key="Alt+3" commandRow="2018" editable="1">Yellow Color Mark</item>
+        <item mode="2" key="Alt+4" commandRow="2019" editable="1">Green Color Mark</item>
+        <item mode="2" key="Alt+5" commandRow="2020" editable="1">CyanBlue Color Mark</item>
+        <item mode="2" key="Alt+6" commandRow="2021" editable="1">Blue Color Mark</item>
+        <item mode="2" key="Alt+7" commandRow="2022" editable="1">Purple Color Mark</item>
+        <item mode="2" key="Alt+8" commandRow="2023" editable="1">Gray Color Mark</item>
+        <item mode="2" key="Alt+`" commandRow="2024" editable="1">Select all Clips with the Same Color Mark</item>
+        <item mode="2" key="Enter" commandRow="2025" editable="1">Render Preview</item>
+        <item mode="2" key="[" commandRow="2027" editable="1">Previous Key Frame</item>
+        <item mode="2" key="]" commandRow="2028" editable="1">Next Key Frame</item>
+        <item mode="2" key="Alt+X" commandRow="2029" editable="1">Motion Track</item>
+        <item mode="2" key="Alt+M" commandRow="2030" editable="1">Color Match</item>
+        <item mode="99" key="Ctrl+Alt+K" commandRow="2031" editable="1">Keyboard Shortcuts</item>
+        <item mode="2" key="," commandRow="2032" editable="1">Insert</item>
+        <item mode="2" key="." commandRow="2033" editable="1">Overwrite</item>
+        <item mode="2" key="F2" commandRow="2035" editable="1">Rename</item>
+        <item mode="2" key="Ctrl+Shift+R" commandRow="2036" editable="1">Reveal in Explorer</item>
+        <item mode="2" key="Alt+A" commandRow="2037" editable="1">Apply</item>
+        <item mode="2" key="Shift+F" commandRow="2038" editable="1">Add to Favourite</item>
+        <item mode="2" key="Alt+K" commandRow="2039" editable="1">Keyframing</item>
+        <item mode="2" key="Ctrl+F" commandRow="2040" editable="1">Crop to Fit</item>
+        <item mode="1" key="X" commandRow="2041" editable="1">Export selected range</item>
+        <item mode="1" key="Shift+X" commandRow="2042" editable="1">Cancel the selected range</item>
+        <item mode="2" key="C" commandRow="2043" editable="1">Quick Split Mode</item>
+        <item mode="2" key="V" commandRow="2044" editable="1">Select Mode</item>
+		<item mode="2" editable="1" commandRow="2045" key="S">Open AudioRemix</item>
+		<item mode="2" editable="1" commandRow="2046" key="Shift+S">Close AudioRemix</item>
+        <item mode="3" key="Space" commandRow="3000" editable="1">Play/Pause</item>
+        <item mode="3" key="Ctrl+/" commandRow="3001" editable="1">Stop</item>
+        <item mode="3" key="`" commandRow="3002" editable="1">Full Screen/Restore</item>
+        <item mode="3" key="Shift+E" commandRow="3003" editable="1">Snapshot</item>
+        <item mode="3" key="Left" commandRow="3004" editable="1">Previous Frame</item>
+        <item mode="3" key="Right" commandRow="3005" editable="1">Next Frame</item>
+        <item mode="3" key="Up" commandRow="3006" editable="1">Previous Edit Point</item>
+        <item mode="3" key="Down" commandRow="3007" editable="1">Next Edit Point</item>
+        <item mode="3" key="Shift+Left" commandRow="3008" editable="1">Go to Previous Second</item>
+        <item mode="3" key="Shift+Right" commandRow="3009" editable="1">Go to Next Second</item>
+        <item mode="3" key="Shift+Up" commandRow="3010" editable="1">Go to Previous Marker</item>
+        <item mode="3" key="Shift+Down" commandRow="3011" editable="1">Go to Next Marker</item>
+        <item mode="3" key="Home" commandRow="3012" editable="1">Go to Project Beginning</item>
+        <item mode="3" key="End" commandRow="3013" editable="1">Go to Project End</item>
+        <item mode="3" key="Shift+Home" commandRow="3014" editable="1">Go to Selected Clip Start</item>
+        <item mode="3" key="Shift+End" commandRow="3015" editable="1">Go to Selected Clip End</item>
+        <item mode="3" key="=" commandRow="3016" editable="1">Zoom in</item>
+        <item mode="3" key="-" commandRow="3017" editable="1">Zoom out</item>
+        <item mode="3" key="Shift+Z" commandRow="3018" editable="1">Zoom to Fit Timeline</item>
+        <item mode="3" key="Ctrl+Up" commandRow="3020" editable="1">Select Previous</item>
+        <item mode="3" key="Ctrl+Down" commandRow="3021" editable="1">Select Next</item>
+        <item mode="4" key="I" commandRow="4000" editable="1">Mark In</item>
+        <item mode="4" key="O" commandRow="4001" editable="1">Mark Out</item>
+        <item mode="4" key="Ctrl+Shift+X" commandRow="4002" editable="1">Clear In and Out</item>
+        <item mode="4" key="Alt+I" commandRow="4003" editable="1">Remove In point</item>
+        <item mode="4" key="Alt+O" commandRow="4004" editable="1">Remove Out point</item>
+        <item mode="4" key="M" commandRow="4005" editable="1">Add Marker</item>
+        <item mode="4" key="Shift+M" commandRow="4006" editable="1">Edit Marker</item>
+        <item mode="5" key="F1" commandRow="5000" editable="1">Help</item>
+        <item mode="5" key="Ctrl+M" commandRow="5001" editable="1">Export</item>
+        <item mode="6" key="Return" commandRow="6001" editable="1">Edit Finished</item>
+        <item mode="2" key="Alt+Left Click" commandRow="2026" editable="0">Add Key Frame</item>
+        <item mode="2" key="Alt+Mouse Drag" commandRow="2034" editable="0">Replace</item>
+        <item mode="3" key="ESC" commandRow="3019" editable="0">close Dialog</item>
+        <item mode="3" key="Alt+Scroll Up" commandRow="3022" editable="0">View Left</item>
+        <item mode="3" key="Scroll Down" commandRow="3023" editable="0">View Down</item>
+		<item mode="2" key="Alt+Mouse Drag" commandRow="2047" editable="0">Adjust the Bezier curve</item>
+    </item_list>
+</ShortcutSettings>

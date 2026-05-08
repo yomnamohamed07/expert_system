@@ -1,0 +1,30 @@
+{
+  "OclCheck": {
+    "Adapters": [
+      {
+        "devID": 9634,
+        "venID": 4318,
+        "devName": "NVIDIA GeForce RTX 3050 Laptop GPU",
+        "strDrvVer": "31.0.15.2879",
+        "strDrvDate": "20230309000000.000000-000",
+        "clCVersion": "OpenCL C 1.2",
+        "clDevVersion": "OpenCL 3.0 CUDA",
+        "clDrvVersion": "528.79",
+        "checkResult": 11,
+        "checked": 1
+      },
+      {
+        "devID": 39876,
+        "venID": 32902,
+        "devName": "Intel(R) UHD Graphics",
+        "strDrvVer": "27.20.100.8853",
+        "strDrvDate": "20201014000000.000000-000",
+        "clCVersion": "OpenCL C 2.0",
+        "clDevVersion": "OpenCL 2.1 NEO",
+        "clDrvVersion": "27.20.100.8853",
+        "checkResult": 11,
+        "checked": 1
+      }
+    ]
+  }
+}

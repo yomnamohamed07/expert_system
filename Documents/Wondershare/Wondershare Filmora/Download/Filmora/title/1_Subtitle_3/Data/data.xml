@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TimeLine>
+	<Properties Count="16">
+		<Property key="Level" type="int" value="0" />
+		<Property key="NLEVersion" type="std::wstring" value="(5, 5, 2, 16)" />
+		<Property key="REFCLSID" type="GUID" value="{8F6EF468-2F80-A782-B74B-DB21422F6BC5}" />
+		<Property key="REFIID" type="GUID" value="{29FDB4EE-DE39-151E-ED38-06C8CFB45CDA}" />
+		<Property key="Render.Framerate" type="NLERational" value="[25, 1]: 25.0000000 " />
+		<Property key="Render.Position" type="int" value="0" />
+		<Property key="Render.RangeFrameNumber" type="NLERange" value="Start:0, End:124" />
+		<Property key="Render.TotalFrameCount" type="int" value="125" />
+		<Property key="Transform.Angle" type="double" value="0.000000" />
+		<Property key="Transform.CenterPoint" type="NLEPointF" value="x:0.500000, y:0.500000" />
+		<Property key="Transform.Enabled" type="int" value="1" />
+		<Property key="Transform.KeepRatio" type="int" value="1" />
+		<Property key="Transform.ResizeScale" type="NLESizeF" value="Width:1.000000, cy:1.000000" />
+		<Property key="Render.NeedBuffer" type="int" value="0" />
+		<Property key="z.Name" type="std::wstring" value="TopTimeline" />
+		<Property key="Transform.Locked" type="int" value="1" />
+	</Properties>
+	<TimeLine>
+		<Properties Count="20">
+			<Property key="Level" type="int" value="1" />
+			<Property key="NLEVersion" type="std::wstring" value="(5, 5, 2, 16)" />
+			<Property key="REFCLSID" type="GUID" value="{9FA01DBA-A986-42BD-B998-C32FB407AD8B}" />
+			<Property key="REFIID" type="GUID" value="{29FDB4EE-DE39-151E-ED38-06C8CFB45CDA}" />
+			<Property key="Render.Framerate" type="NLERational" value="[25, 1]: 25.0000000 " />
+			<Property key="Render.RangeType" type="int" value="1" />
+			<Property key="Render.Position" type="int" value="0" />
+			<Property key="Render.RangeFrameNumber" type="NLERange" value="Start:0, End:124" />
+			<Property key="Render.TotalFrameCount" type="int" value="125" />
+			<Property key="Text.Section.CaptionData" type="std::wstring" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;NLETitleArray&gt;&lt;NLETitleItem&gt;&lt;ShapeParam ShapeID=&quot;1&quot;&gt;&lt;ShapeGeometry ShapeGeometryHeight=&quot;600&quot; ShapeGeometryPointCnt=&quot;0&quot; ShapeGeometryWidth=&quot;600&quot;/&gt;&lt;ShapeColor&gt;&lt;ShapeFace ColorEnable=&quot;1&quot; ColorType=&quot;0&quot;&gt;&lt;SingleColor A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColor GradientDir=&quot;-1&quot;&gt;&lt;GradientColorStart A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColorEnd A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;/GradientColor&gt;&lt;/ShapeFace&gt;&lt;ShapeBorder BorderBlur=&quot;0&quot; BorderWidth=&quot;0&quot; ColorEnable=&quot;1&quot; ColorType=&quot;0&quot;&gt;&lt;SingleColor A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColor GradientDir=&quot;-1&quot;&gt;&lt;GradientColorStart A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColorEnd A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;/GradientColor&gt;&lt;/ShapeBorder&gt;&lt;/ShapeColor&gt;&lt;/ShapeParam&gt;&lt;EffectParam/&gt;&lt;TextNode&gt;&lt;TextParam&gt;&lt;TextData Align=&quot;0&quot; Angle=&quot;0&quot; Radius=&quot;0&quot; TextMode=&quot;1&quot;&gt;&lt;CharData LineSpace=&quot;0&quot; RowSpace=&quot;0&quot; Title=&quot;004C006F00720065006D00200069007000730075006D00200064006F006C006F0072002000730069007400200061006D00650074002C00200063006F006E00730065006300740065007400750072002000610064006900700069007300630069006E006700200065006C00690074002E&quot;&gt;&lt;Font Bold=&quot;0&quot; FontName=&quot;Arial&quot; Italic=&quot;0&quot; Size=&quot;24.0&quot;/&gt;&lt;Face Alpha=&quot;255&quot; BlurRadius=&quot;0&quot; Color1=&quot;16777215&quot; Effect=&quot;6&quot; Enable=&quot;1&quot;/&gt;&lt;Border Alpha=&quot;255&quot; BlurRadius=&quot;0&quot; Color1=&quot;0&quot; Enable=&quot;0&quot; Size=&quot;4&quot;/&gt;&lt;Shadow Alpha=&quot;255&quot; BlurRadius=&quot;0&quot; Color=&quot;0&quot; Direction=&quot;3&quot; Distance=&quot;1&quot; Enable=&quot;1&quot;/&gt;&lt;/CharData&gt;&lt;/TextData&gt;&lt;Texture Enable=&quot;0&quot; TextureImagePath=&quot;&quot;/&gt;&lt;Gradient Color1=&quot;16777215&quot; Color2=&quot;16777215&quot; Enable=&quot;0&quot; GradType=&quot;0&quot;/&gt;&lt;/TextParam&gt;&lt;EffectParam HZoom=&quot;1&quot; VZoom=&quot;1&quot;/&gt;&lt;AnimationParam MotionID=&quot;&quot; TransitionID=&quot;&quot;/&gt;&lt;/TextNode&gt;&lt;/NLETitleItem&gt;&lt;/NLETitleArray&gt;" />
+			<Property key="Text.Section.CaptionDataLength" type="int" value="2650" />
+			<Property key="Transform.Angle" type="double" value="0.0" />
+			<Property key="Transform.CenterPoint" type="NLEPointF" value="x:0.500396, y:0.845288" />
+			<Property key="Transform.Enabled" type="int" value="1" />
+			<Property key="Transform.KeepRatio" type="int" value="0" />
+			<Property key="Transform.ResizeScale" type="NLESizeF" value="Width:0.300000, cy:0.300000" />
+			<Property key="z.Name" type="std::wstring" value="Caption" />
+			<Property key="Animation.Type" type="int" value="3" />
+			<Property key="Animation.InRatio" type="double" value="0.296" />
+			<Property key="Animation.OutRatio" type="double" value="0.296" />
+		</Properties>
+	</TimeLine>
+	<TimeLine>
+		<Properties Count="20">
+			<Property key="Level" type="int" value="2" />
+			<Property key="NLEVersion" type="std::wstring" value="(5, 5, 2, 16)" />
+			<Property key="REFCLSID" type="GUID" value="{9FA01DBA-A986-42BD-B998-C32FB407AD8B}" />
+			<Property key="REFIID" type="GUID" value="{29FDB4EE-DE39-151E-ED38-06C8CFB45CDA}" />
+			<Property key="Render.Framerate" type="NLERational" value="[25, 1]: 25.0000000 " />
+			<Property key="Render.RangeType" type="int" value="1" />
+			<Property key="Render.Position" type="int" value="0" />
+			<Property key="Render.RangeFrameNumber" type="NLERange" value="Start:0, End:124" />
+			<Property key="Render.TotalFrameCount" type="int" value="125" />
+			<Property key="Text.Section.CaptionData" type="std::wstring" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;NLETitleArray&gt;&lt;NLETitleItem&gt;&lt;ShapeParam ShapeID=&quot;1&quot;&gt;&lt;ShapeGeometry ShapeGeometryHeight=&quot;600&quot; ShapeGeometryPointCnt=&quot;0&quot; ShapeGeometryWidth=&quot;600&quot;/&gt;&lt;ShapeColor&gt;&lt;ShapeFace ColorEnable=&quot;1&quot; ColorType=&quot;0&quot;&gt;&lt;SingleColor A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColor GradientDir=&quot;-1&quot;&gt;&lt;GradientColorStart A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColorEnd A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;/GradientColor&gt;&lt;/ShapeFace&gt;&lt;ShapeBorder BorderBlur=&quot;0&quot; BorderWidth=&quot;0&quot; ColorEnable=&quot;1&quot; ColorType=&quot;0&quot;&gt;&lt;SingleColor A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColor GradientDir=&quot;-1&quot;&gt;&lt;GradientColorStart A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;GradientColorEnd A=&quot;0&quot; B=&quot;255&quot; G=&quot;255&quot; R=&quot;255&quot;/&gt;&lt;/GradientColor&gt;&lt;/ShapeBorder&gt;&lt;/ShapeColor&gt;&lt;/ShapeParam&gt;&lt;EffectParam/&gt;&lt;TextNode&gt;&lt;TextParam&gt;&lt;TextData Align=&quot;0&quot; Angle=&quot;0&quot; Radius=&quot;0&quot; TextMode=&quot;1&quot;&gt;&lt;CharData LineSpace=&quot;0&quot; RowSpace=&quot;0&quot; Title=&quot;0056006900760061006D0075007300200061007500630074006F00720020006900640020006A007500730074006F007200200065007500200075006C007400720069006300650073002E&quot;&gt;&lt;Font Bold=&quot;0&quot; FontName=&quot;Arial&quot; Italic=&quot;0&quot; Size=&quot;24.0&quot;/&gt;&lt;Face Alpha=&quot;255&quot; BlurRadius=&quot;0&quot; Color1=&quot;16777215&quot; Effect=&quot;6&quot; Enable=&quot;1&quot;/&gt;&lt;Border Alpha=&quot;255&quot; BlurRadius=&quot;0&quot; Color1=&quot;0&quot; Enable=&quot;0&quot; Size=&quot;4&quot;/&gt;&lt;Shadow Alpha=&quot;255&quot; BlurRadius=&quot;0&quot; Color=&quot;0&quot; Direction=&quot;3&quot; Distance=&quot;1&quot; Enable=&quot;1&quot;/&gt;&lt;/CharData&gt;&lt;/TextData&gt;&lt;Texture Enable=&quot;0&quot; TextureImagePath=&quot;&quot;/&gt;&lt;Gradient Color1=&quot;16777215&quot; Color2=&quot;16777215&quot; Enable=&quot;0&quot; GradType=&quot;0&quot;/&gt;&lt;/TextParam&gt;&lt;EffectParam HZoom=&quot;1&quot; VZoom=&quot;1&quot;/&gt;&lt;AnimationParam MotionID=&quot;&quot; TransitionID=&quot;&quot;/&gt;&lt;/TextNode&gt;&lt;/NLETitleItem&gt;&lt;/NLETitleArray&gt;" />
+			<Property key="Text.Section.CaptionDataLength" type="int" value="2574" />
+			<Property key="Transform.Angle" type="double" value="0.0" />
+			<Property key="Transform.CenterPoint" type="NLEPointF" value="x:0.500000, y:0.905766" />
+			<Property key="Transform.Enabled" type="int" value="1" />
+			<Property key="Transform.KeepRatio" type="int" value="0" />
+			<Property key="Transform.ResizeScale" type="NLESizeF" value="Width:0.300000, cy:0.300000" />
+			<Property key="z.Name" type="std::wstring" value="Caption" />
+			<Property key="Animation.Type" type="int" value="3" />
+			<Property key="Animation.InRatio" type="double" value="0.296" />
+			<Property key="Animation.OutRatio" type="double" value="0.296" />
+		</Properties>
+	</TimeLine>
+</TimeLine>

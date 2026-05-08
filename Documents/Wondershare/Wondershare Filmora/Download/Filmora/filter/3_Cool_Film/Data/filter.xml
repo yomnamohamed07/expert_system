@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Filter>
+    <GUID>2FCCBFD6-339A-4679-A109-6A77CCF7356E</GUID>
+    <Name>Cool Film</Name>
+    <Transition>0</Transition>
+    <LUT>
+        <LutFile>Cool Film.cube</LutFile>
+    </LUT>
+</Filter>

@@ -1,0 +1,11 @@
+
+        <?xml version="1.0" encoding="utf-8"?>
+        <Filter>
+        <GUID>3B2DAAC3-EA2E-4D7D-ABCC-FEE5C107F029</GUID>
+        <Name>RGB_Stroke</Name>
+        <Transition>0</Transition>
+        <GPUFilter>
+    	<ConfigFile>RGB_Stroke.conf</ConfigFile>
+    	</GPUFilter>
+    	</Filter>
+    	

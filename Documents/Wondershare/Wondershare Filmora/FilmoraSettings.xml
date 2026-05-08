@@ -1,0 +1,100 @@
+<!DOCTYPE FilmoraSettings>
+<FilmoraSettings>
+    <Settings>
+        <General>
+            <ThemeType>1</ThemeType>
+            <CheckForAutoUpdate>7</CheckForAutoUpdate>
+            <DontShowMessage>0</DontShowMessage>
+            <ReppleCustomSpeed>1</ReppleCustomSpeed>
+            <HighDpiScaling>1</HighDpiScaling>
+            <AutoRipple>1</AutoRipple>
+            <ShowProjectLibrary>1</ShowProjectLibrary>
+            <TimelineSnapEnable>1</TimelineSnapEnable>
+            <RecentProListType>1</RecentProListType>
+            <UsedHighlightFunc>0</UsedHighlightFunc>
+            <LaunchWcc>1</LaunchWcc>
+            <RecordExportParam>0</RecordExportParam>
+            <SubtitleEditApllyToAll>0</SubtitleEditApllyToAll>
+            <STTDeleteTaskNoTip>0</STTDeleteTaskNoTip>
+            <TTSDeleteTaskNoTip>0</TTSDeleteTaskNoTip>
+            <AutoRemoveLocalFileEnable>0</AutoRemoveLocalFileEnable>
+            <AlwaysConfirmDownLoadResolution>1</AlwaysConfirmDownLoadResolution>
+            <ShowArchiveProjectTip>1</ShowArchiveProjectTip>
+            <ArchiveProjectAndUpload>1</ArchiveProjectAndUpload>
+            <RecordVideoCountdown>3</RecordVideoCountdown>
+            <RecordAudioCountdown>3</RecordAudioCountdown>
+            <sVCGVideoDownloadNoTip>0</sVCGVideoDownloadNoTip>
+            <sVCGVideoDownloadIndex>0</sVCGVideoDownloadIndex>
+            <sVCGPhotoDownloadNoTip>0</sVCGPhotoDownloadNoTip>
+            <sVCGPhotoDownloadWidth>0</sVCGPhotoDownloadWidth>
+            <sDataCollectEnable>1</sDataCollectEnable>
+            <sScreenRecorderDpiParam>0</sScreenRecorderDpiParam>
+            <AutoSync>1</AutoSync>
+            <AutoCloudStorage>0</AutoCloudStorage>
+            <LastSyncDatetime>0</LastSyncDatetime>
+            <ShowAutoSyncTip>false</ShowAutoSyncTip>
+        </General>
+        <FolderPath>
+            <DownloadFileFolder></DownloadFileFolder>
+            <TempFileFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Temp</TempFileFolder>
+            <CaptureFileFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Recorded</CaptureFileFolder>
+            <ViceoverFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Voiceover</ViceoverFolder>
+            <YouTobeFileFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Upload</YouTobeFileFolder>
+            <SnapShotFileFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Snapshot</SnapShotFileFolder>
+            <CloudDiskFileFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Cloud Project</CloudDiskFileFolder>
+            <InstanllEffectPackTo>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Installed Effects</InstanllEffectPackTo>
+            <ImportDeviceFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/User Media/Device Import</ImportDeviceFolder>
+            <ThirdPartyCloudFileFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Other Apps</ThirdPartyCloudFileFolder>
+        </FolderPath>
+        <sEditting>
+            <sPhotoType>1</sPhotoType>
+            <sPhoto>500</sPhoto>
+            <sTransitionType>1</sTransitionType>
+            <sTransition>200</sTransition>
+            <sEffectType>1</sEffectType>
+            <sEffect>500</sEffect>
+            <sPhotoPlacement>0</sPhotoPlacement>
+            <sFreezeType>1</sFreezeType>
+            <sFreeze>500</sFreeze>
+            <sSplitMode>0</sSplitMode>
+            <ShowSplitButton>1</ShowSplitButton>
+            <AutoRippleEnabled>True</AutoRippleEnabled>
+            <PlayheadBlankClickMoveEnabled>False</PlayheadBlankClickMoveEnabled>
+            <AudioMasterEnable>False</AudioMasterEnable>
+            <SnapshotFormat>png</SnapshotFormat>
+            <SnapshotFormatDialogPopUp>True</SnapshotFormatDialogPopUp>
+        </sEditting>
+        <Save>
+            <AutoBackupProject>1</AutoBackupProject>
+            <AutoBackupProjectTime>5</AutoBackupProjectTime>
+            <BackupProjectFile>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Backup</BackupProjectFile>
+            <MaximumBackupVersion>10</MaximumBackupVersion>
+            <DefaultProjectSaveFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Projects</DefaultProjectSaveFolder>
+            <lutCubeFolder></lutCubeFolder>
+            <UploadToCloudDisk>0</UploadToCloudDisk>
+            <TimelineAutoHighlight>1</TimelineAutoHighlight>
+            <ClipsAutoHighlight>0</ClipsAutoHighlight>
+            <Add2ProjectMedia>0</Add2ProjectMedia>
+            <LocalRecentExportSettings>0</LocalRecentExportSettings>
+            <DeviceRecentExportSettings>0</DeviceRecentExportSettings>
+        </Save>
+        <Performance>
+            <EnableOpenCL>1</EnableOpenCL>
+            <EnableOpenGLEncode>1</EnableOpenGLEncode>
+            <GPUDeviceSwicth>0</GPUDeviceSwicth>
+            <EnableGPUDeCode>1</EnableGPUDeCode>
+            <AutoSelectGPU>1</AutoSelectGPU>
+            <OpenCLGPUAcceleration>NVIDIA GeForce RTX 3050 Laptop GPU</OpenCLGPUAcceleration>
+            <UserChangedGpuState>0</UserChangedGpuState>
+            <AutomaticallyCreateProxy>0</AutomaticallyCreateProxy>
+            <AutoCreateProxyResolution>3840*2160</AutoCreateProxyResolution>
+            <GetProxyFileFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/MediaProxy</GetProxyFileFolder>
+            <AutomaticallyDeleteProxy>0</AutomaticallyDeleteProxy>
+            <PreviewRenderFilesFolder>C:/Users/mahmo/OneDrive/Documents/Wondershare/Wondershare Filmora/Render</PreviewRenderFilesFolder>
+            <AutomaticallyDeleteRenderFile>1</AutomaticallyDeleteRenderFile>
+            <EnableAutoRender>0</EnableAutoRender>
+            <sAutoRenderAfterSeconds>5</sAutoRenderAfterSeconds>
+            <sRenderView>1</sRenderView>
+        </Performance>
+    </Settings>
+</FilmoraSettings>

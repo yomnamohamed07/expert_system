@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neural Network Expert System</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #0a0e14;
+    --bg2: #111720;
+    --bg3: #1a2232;
+    --border: #1e2d42;
+    --border2: #263550;
+    --text: #c8d8f0;
+    --text2: #6b88aa;
+    --text3: #3d5570;
+    --accent: #00c8ff;
+    --accent2: #0088cc;
+    --flu: #f5a623;
+    --cold: #4fc3f7;
+    --covid: #e57bb2;
+    --healthy: #4db6ac;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 56px 1fr;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    grid-column: 1 / -1;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 16px;
+  }
+  .logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .logo span { color: var(--text2); font-weight: 400; }
+  .header-badges {
+    display: flex; gap: 8px; margin-left: auto;
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    border: 1px solid var(--border2);
+    border-radius: 3px;
+    color: var(--text2);
+    letter-spacing: 0.05em;
+  }
+  .badge.green { border-color: var(--healthy); color: var(--healthy); }
+
+  /* SIDEBAR */
+  aside {
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    padding: 20px 0;
+    overflow-y: auto;
+  }
+  .nav-section {
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+  .nav-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding: 0 4px;
+  }
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text2);
+    font-family: var(--mono);
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+    transition: all 0.15s;
+    margin-bottom: 2px;
+  }
+  .nav-btn:hover { background: var(--bg3); color: var(--text); }
+  .nav-btn.active { background: rgba(0,200,255,0.08); color: var(--accent); border-left: 2px solid var(--accent); border-radius: 0 4px 4px 0; }
+  .nav-btn .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--text3); flex-shrink: 0;
+  }
+  .nav-btn.active .dot { background: var(--accent); }
+
+  .stats-box {
+    margin: 0 16px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+  }
+  .stat-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-key { color: var(--text2); font-family: var(--mono); }
+  .stat-val { color: var(--accent); font-family: var(--mono); font-weight: 600; }
+
+  /* MAIN */
+  main {
+    overflow-y: auto;
+    background: var(--bg);
+  }
+
+  .panel { display: none; padding: 28px; }
+  .panel.active { display: block; }
+
+  .panel-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* HIERARCHY */
+  .hierarchy-svg {
+    width: 100%;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  /* DATASET */
+  .chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .chart-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .chart-card-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .chart-wrap { position: relative; width: 100%; height: 180px; }
+  .chart-wrap-tall { position: relative; width: 100%; height: 220px; }
+
+  /* NETWORK */
+  .network-vis {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  /* TRAINING */
+  .train-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .ctrl-group {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .ctrl-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.06em;
+  }
+  .ctrl-input {
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 10px;
+    width: 90px;
+    outline: none;
+  }
+  .ctrl-input:focus { border-color: var(--accent2); }
+  .btn-train {
+    padding: 8px 20px;
+    background: var(--accent2);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.15s;
+    margin-top: 14px;
+  }
+  .btn-train:hover { background: var(--accent); color: var(--bg); }
+  .btn-train:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .progress-bar-wrap {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    height: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  .epoch-log {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    height: 100px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+  .epoch-log .ok { color: var(--healthy); }
+  .epoch-log .warn { color: var(--flu); }
+
+  /* DIAGNOSE */
+  .symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .sym-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+    text-align: center;
+  }
+  .sym-card:hover { border-color: var(--border2); }
+  .sym-card.on { border-color: var(--accent); background: rgba(0,200,255,0.06); }
+  .sym-card .sym-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 0.05em;
+  }
+  .sym-card.on .sym-name { color: var(--accent); }
+  .sym-indicator {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border2);
+    margin: 0 auto 8px;
+    transition: background 0.15s;
+  }
+  .sym-card.on .sym-indicator { background: var(--accent); }
+
+  .diag-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--accent2);
+    border-radius: 6px;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: all 0.15s;
+    margin-bottom: 20px;
+  }
+  .diag-btn:hover { background: rgba(0,200,255,0.08); }
+
+  .result-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .result-disease {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .conf-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  .conf-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+  }
+  .conf-name {
+    font-family: var(--mono);
+    font-size: 11px;
+    width: 70px;
+    color: var(--text2);
+  }
+  .conf-bar-bg {
+    flex: 1;
+    height: 6px;
+    background: var(--bg3);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .conf-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+  }
+  .conf-pct {
+    font-family: var(--mono);
+    font-size: 11px;
+    width: 40px;
+    text-align: right;
+    color: var(--text2);
+  }
+  .group-analysis {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .group-chip {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 10px;
+    text-align: center;
+  }
+  .group-chip.active { border-color: var(--accent2); }
+  .group-chip .gc-name {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.06em;
+  }
+  .group-chip .gc-val {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    margin-top: 2px;
+  }
+  .group-chip.active .gc-val { color: var(--accent); }
+  .advice-box {
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: var(--bg3);
+    border-left: 2px solid;
+    border-radius: 0 4px 4px 0;
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  /* training not done msg */
+  .not-trained-msg {
+    text-align: center;
+    padding: 40px;
+    color: var(--text3);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 2;
+  }
+  .not-trained-msg span { color: var(--flu); }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">NN<span>/</span>EXPERT <span>— Disease Diagnosis System</span></div>
+    <div class="header-badges">
+      <div class="badge">6 inputs</div>
+      <div class="badge">8 hidden</div>
+      <div class="badge">4 outputs</div>
+      <div class="badge green" id="train-status">untrained</div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="nav-section">
+      <div class="nav-label">Navigation</div>
+      <button class="nav-btn active" onclick="showPanel('hierarchy')"><div class="dot"></div>Knowledge hierarchy</button>
+      <button class="nav-btn" onclick="showPanel('dataset')"><div class="dot"></div>Dataset analysis</button>
+      <button class="nav-btn" onclick="showPanel('network')"><div class="dot"></div>Network architecture</button>
+      <button class="nav-btn" onclick="showPanel('training')"><div class="dot"></div>Train model</button>
+      <button class="nav-btn" onclick="showPanel('diagnose')"><div class="dot"></div>Diagnose</button>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Model info</div>
+      <div class="stats-box">
+        <div class="stat-row"><span class="stat-key">samples</span><span class="stat-val">20</span></div>
+        <div class="stat-row"><span class="stat-key">classes</span><span class="stat-val">4</span></div>
+        <div class="stat-row"><span class="stat-key">features</span><span class="stat-val">6</span></div>
+        <div class="stat-row"><span class="stat-key">hidden</span><span class="stat-val">8</span></div>
+        <div class="stat-row"><span class="stat-key">lr</span><span class="stat-val" id="lr-display">0.1</span></div>
+        <div class="stat-row"><span class="stat-key">accuracy</span><span class="stat-val" id="acc-display">—</span></div>
+        <div class="stat-row"><span class="stat-key">loss</span><span class="stat-val" id="loss-display">—</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HIERARCHY PANEL -->
+    <div class="panel active" id="panel-hierarchy">
+      <div class="panel-title">Knowledge hierarchy</div>
+      <svg class="hierarchy-svg" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .h-label { font-family: 'IBM Plex Mono', monospace; fill: #6b88aa; font-size: 10px; }
+          .h-node-title { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; }
+          .h-node-sub { font-family: 'IBM Plex Mono', monospace; font-size: 9px; }
+          .h-conn { stroke: #1e2d42; stroke-width: 1; fill: none; }
+        </style>
+
+        <!-- Level labels -->
+        <text class="h-label" x="10" y="80" transform="rotate(-90,10,80)">L1 — inputs</text>
+        <text class="h-label" x="10" y="195" transform="rotate(-90,10,195)">L2 — groups</text>
+        <text class="h-label" x="10" y="295" transform="rotate(-90,10,295)">L3 — diagnosis</text>
+
+        <!-- L1 Symptom boxes -->
+        <!-- Fever -->
+        <rect x="40" y="30" width="88" height="32" rx="4" fill="#111720" stroke="#263550" stroke-width="1"/>
+        <text class="h-node-title" x="84" y="49" text-anchor="middle" fill="#4fc3f7">Fever</text>
+        <!-- Cough -->
+        <rect x="140" y="30" width="88" height="32" rx="4" fill="#111720" stroke="#263550" stroke-width="1"/>
+        <text class="h-node-title" x="184" y="49" text-anchor="middle" fill="#4fc3f7">Cough</text>
+        <!-- Fatigue -->
+        <rect x="240" y="30" width="88" height="32" rx="4" fill="#111720" stroke="#263550" stroke-width="1"/>
+        <text class="h-node-title" x="284" y="49" text-anchor="middle" fill="#4fc3f7">Fatigue</text>
+        <!-- Headache -->
+        <rect x="340" y="30" width="88" height="32" rx="4" fill="#111720" stroke="#263550" stroke-width="1"/>
+        <text class="h-node-title" x="384" y="49" text-anchor="middle" fill="#4fc3f7">Headache</text>
+        <!-- SoreThroat -->
+        <rect x="440" y="30" width="100" height="32" rx="4" fill="#111720" stroke="#263550" stroke-width="1"/>
+        <text class="h-node-title" x="490" y="49" text-anchor="middle" fill="#4fc3f7">Sore Throat</text>
+        <!-- BodyAche -->
+        <rect x="553" y="30" width="100" height="32" rx="4" fill="#111720" stroke="#263550" stroke-width="1"/>
+        <text class="h-node-title" x="603" y="49" text-anchor="middle" fill="#4fc3f7">Body Ache</text>
+
+        <!-- L2 Group boxes -->
+        <!-- Respiratory -->
+        <rect x="100" y="140" width="150" height="40" rx="5" fill="#0d1f35" stroke="#185FA5" stroke-width="1"/>
+        <text class="h-node-title" x="175" y="157" text-anchor="middle" fill="#4fc3f7">Respiratory</text>
+        <text class="h-node-sub" x="175" y="171" text-anchor="middle" fill="#6b88aa">Cough · Sore Throat</text>
+        <!-- Systemic -->
+        <rect x="275" y="140" width="160" height="40" rx="5" fill="#1a1404" stroke="#854F0B" stroke-width="1"/>
+        <text class="h-node-title" x="355" y="157" text-anchor="middle" fill="#f5a623">Systemic</text>
+        <text class="h-node-sub" x="355" y="171" text-anchor="middle" fill="#6b88aa">Fever · Fatigue · Body Ache</text>
+        <!-- Neurological -->
+        <rect x="458" y="140" width="130" height="40" rx="5" fill="#15112a" stroke="#534AB7" stroke-width="1"/>
+        <text class="h-node-title" x="523" y="157" text-anchor="middle" fill="#AFA9EC">Neurological</text>
+        <text class="h-node-sub" x="523" y="171" text-anchor="middle" fill="#6b88aa">Headache</text>
+
+        <!-- L1 → L2 connectors -->
+        <line class="h-conn" x1="184" y1="62" x2="175" y2="140"/>
+        <line class="h-conn" x1="490" y1="62" x2="220" y2="140"/>
+        <line class="h-conn" x1="84" y1="62" x2="310" y2="140"/>
+        <line class="h-conn" x1="284" y1="62" x2="340" y2="140"/>
+        <line class="h-conn" x1="603" y1="62" x2="400" y2="140"/>
+        <line class="h-conn" x1="384" y1="62" x2="510" y2="140"/>
+
+        <!-- L3 Disease boxes -->
+        <rect x="40" y="250" width="110" height="38" rx="5" fill="#1a1200" stroke="#f5a623" stroke-width="1"/>
+        <text class="h-node-title" x="95" y="272" text-anchor="middle" fill="#f5a623">Flu</text>
+        <text class="h-node-sub" x="95" y="284" text-anchor="middle" fill="#6b88aa">fever + systemic</text>
+
+        <rect x="170" y="250" width="110" height="38" rx="5" fill="#001525" stroke="#4fc3f7" stroke-width="1"/>
+        <text class="h-node-title" x="225" y="272" text-anchor="middle" fill="#4fc3f7">Cold</text>
+        <text class="h-node-sub" x="225" y="284" text-anchor="middle" fill="#6b88aa">respiratory only</text>
+
+        <rect x="300" y="250" width="110" height="38" rx="5" fill="#1a0820" stroke="#e57bb2" stroke-width="1"/>
+        <text class="h-node-title" x="355" y="272" text-anchor="middle" fill="#e57bb2">COVID-19</text>
+        <text class="h-node-sub" x="355" y="284" text-anchor="middle" fill="#6b88aa">all symptoms</text>
+
+        <rect x="430" y="250" width="110" height="38" rx="5" fill="#001510" stroke="#4db6ac" stroke-width="1"/>
+        <text class="h-node-title" x="485" y="272" text-anchor="middle" fill="#4db6ac">Healthy</text>
+        <text class="h-node-sub" x="485" y="284" text-anchor="middle" fill="#6b88aa">no symptoms</text>
+
+        <!-- L2 → L3 connectors -->
+        <line class="h-conn" x1="175" y1="180" x2="170" y2="250"/>
+        <line class="h-conn" x1="175" y1="180" x2="225" y2="250"/>
+        <line class="h-conn" x1="355" y1="180" x2="95" y2="250"/>
+        <line class="h-conn" x1="355" y1="180" x2="355" y2="250"/>
+        <line class="h-conn" x1="355" y1="180" x2="355" y2="250"/>
+        <line class="h-conn" x1="523" y1="180" x2="355" y2="250"/>
+        <line class="h-conn" x1="485" y1="250" x2="340" y2="180"/>
+      </svg>
+    </div>
+
+    <!-- DATASET PANEL -->
+    <div class="panel" id="panel-dataset">
+      <div class="panel-title">Dataset analysis</div>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-card-title">Class distribution (n=20)</div>
+          <div class="chart-wrap">
+            <canvas id="distChart" role="img" aria-label="Class distribution bar chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">Symptom frequency per class (%)</div>
+          <div class="chart-wrap">
+            <canvas id="symChart" role="img" aria-label="Symptom frequency per class"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Symptom co-occurrence heatmap</div>
+        <div class="chart-wrap-tall">
+          <canvas id="heatChart" role="img" aria-label="Symptom presence per disease grouped bar"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- NETWORK PANEL -->
+    <div class="panel" id="panel-network">
+      <div class="panel-title">Network architecture</div>
+      <div class="network-vis">
+        <svg id="nn-svg" width="100%" viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-card-title">Weight matrix W1 shape: 6×8</div>
+          <div style="font-family: 'IBM Plex Mono'; font-size: 11px; color: #6b88aa; line-height: 2;">
+            <div>Input → Hidden: <span style="color:#00c8ff">48 weights</span></div>
+            <div>Activation: <span style="color:#f5a623">Sigmoid σ(z)</span></div>
+            <div>Init: random ×0.5 (seed=42)</div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-title">Weight matrix W2 shape: 8×4</div>
+          <div style="font-family: 'IBM Plex Mono'; font-size: 11px; color: #6b88aa; line-height: 2;">
+            <div>Hidden → Output: <span style="color:#00c8ff">32 weights</span></div>
+            <div>Activation: <span style="color:#4db6ac">Softmax</span></div>
+            <div>Loss: Cross-entropy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRAINING PANEL -->
+    <div class="panel" id="panel-training">
+      <div class="panel-title">Train model</div>
+      <div class="train-controls">
+        <div class="ctrl-group">
+          <div class="ctrl-label">EPOCHS</div>
+          <input class="ctrl-input" type="number" id="ctrl-epochs" value="1000" min="100" max="5000" step="100">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">LEARNING RATE</div>
+          <input class="ctrl-input" type="number" id="ctrl-lr" value="0.1" min="0.001" max="1" step="0.01">
+        </div>
+        <div class="ctrl-group">
+          <div class="ctrl-label">HIDDEN SIZE</div>
+          <input class="ctrl-input" type="number" id="ctrl-hidden" value="8" min="4" max="32" step="2">
+        </div>
+        <div class="ctrl-group">
+          <button class="btn-train" id="train-btn" onclick="startTraining()">Run training</button>
+        </div>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+      <div class="epoch-log" id="epoch-log">
+        <span style="color:#3d5570">// waiting for training to start...</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">Loss curve</div>
+        <div class="chart-wrap-tall">
+          <canvas id="lossChart" role="img" aria-label="Training loss curve"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIAGNOSE PANEL -->
+    <div class="panel" id="panel-diagnose">
+      <div class="panel-title">Diagnose</div>
+      <div id="diagnose-content">
+        <div class="not-trained-msg">
+          <span>Model not trained yet.</span><br>
+          Go to <span>Train model</span> tab first.
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// ===================== DATA =====================
+const X = [
+  [1,1,1,1,0,1],[1,1,1,1,0,1],[0,1,0,0,1,0],[0,1,0,0,1,0],
+  [1,1,1,1,1,1],[1,1,1,1,1,1],[0,0,0,0,0,0],[0,0,0,0,0,0],
+  [1,0,1,1,0,1],[0,1,0,0,1,0],[1,1,1,0,1,1],[0,0,0,0,0,0],
+  [1,1,1,1,0,0],[0,1,1,0,1,0],[1,0,1,1,0,1],[1,1,1,1,1,0],
+  [0,0,1,0,0,0],[0,1,0,1,1,0],[1,1,0,1,0,1],[1,1,1,1,1,1]
+];
+const yRaw = [0,0,1,1,2,2,3,3,0,1,2,3,0,1,0,2,3,1,0,2];
+const DISEASE_NAMES = ['Flu','Cold','COVID-19','Healthy'];
+const DISEASE_COLORS = ['#f5a623','#4fc3f7','#e57bb2','#4db6ac'];
+const SYMPTOM_NAMES = ['Fever','Cough','Fatigue','Headache','Sore Throat','Body Ache'];
+const ADVICE = {
+  'Flu': 'Rest at home, stay hydrated, take fever reducers. See a doctor if symptoms worsen after 3 days.',
+  'Cold': 'Rest, warm liquids, throat lozenges. Usually resolves in 7–10 days on its own.',
+  'COVID-19': 'Isolate immediately! Contact your doctor, get tested, and monitor oxygen levels.',
+  'Healthy': 'No symptoms detected. Keep up healthy habits — sleep, hydration, and exercise.'
+};
+const ADVICE_COLORS = { 'Flu':'#f5a623','Cold':'#4fc3f7','COVID-19':'#e57bb2','Healthy':'#4db6ac' };
+
+function oneHot(y, n) {
+  return y.map(v => { const r = new Array(n).fill(0); r[v] = 1; return r; });
+}
+const Y = oneHot(yRaw, 4);
+
+// ===================== NEURAL NETWORK =====================
+class NN {
+  constructor(inSize, hidSize, outSize, lr) {
+    this.lr = lr; this.inSize = inSize; this.hidSize = hidSize; this.outSize = outSize;
+    const s = 0.5;
+    this.W1 = this.randMatrix(inSize, hidSize, s);
+    this.b1 = new Array(hidSize).fill(0);
+    this.W2 = this.randMatrix(hidSize, outSize, s);
+    this.b2 = new Array(outSize).fill(0);
+    this._rng = this.seededRand(42);
+  }
+  seededRand(seed) {
+    let s = seed;
+    return () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  }
+  randMatrix(r, c, scale) {
+    const rng = this.seededRand(42 + r + c);
+    return Array.from({length:r}, () => Array.from({length:c}, () => (rng()-0.5)*2*scale));
+  }
+  sigmoid(z) { return 1 / (1 + Math.exp(-z)); }
+  softmax(z) {
+    const max = Math.max(...z);
+    const e = z.map(v => Math.exp(v - max));
+    const s = e.reduce((a,b)=>a+b,0);
+    return e.map(v=>v/s);
+  }
+  matMul(A, B) {
+    return A.map(row => B[0].map((_,j) => row.reduce((s,_,k)=>s+row[k]*B[k][j],0)));
+  }
+  addBias(M, b) { return M.map(row => row.map((v,j) => v+b[j])); }
+
+  forward(Xin) {
+    this.lastX = Xin;
+    this.z1 = this.addBias(this.matMul(Xin, this.W1), this.b1);
+    this.a1 = this.z1.map(row => row.map(v => this.sigmoid(v)));
+    this.z2 = this.addBias(this.matMul(this.a1, this.W2), this.b2);
+    this.a2 = this.z2.map(row => this.softmax(row));
+    return this.a2;
+  }
+
+  backward(Xin, Yin) {
+    const m = Xin.length;
+    const dz2 = this.a2.map((row,i) => row.map((v,j) => v - Yin[i][j]));
+    const dW2 = this.W2.map((_,i) => this.W2[i].map((_,j) => dz2.reduce((s,r,k)=>s+this.a1[k][i]*r[j],0)/m));
+    const db2 = this.b2.map((_,j) => dz2.reduce((s,r)=>s+r[j],0)/m);
+    const da1 = this.a1.map((row,i) => row.map((_,k) => dz2[i].reduce((s,v,j)=>s+v*this.W2[k][j],0)));
+    const dz1 = da1.map((row,i) => row.map((v,j) => v * this.sigmoid(this.z1[i][j]) * (1 - this.sigmoid(this.z1[i][j]))));
+    const dW1 = this.W1.map((_,i) => this.W1[i].map((_,j) => dz1.reduce((s,r,k)=>s+Xin[k][i]*r[j],0)/m));
+    const db1 = this.b1.map((_,j) => dz1.reduce((s,r)=>s+r[j],0)/m);
+    this.W2 = this.W2.map((row,i) => row.map((v,j) => v - this.lr*dW2[i][j]));
+    this.b2 = this.b2.map((v,j) => v - this.lr*db2[j]);
+    this.W1 = this.W1.map((row,i) => row.map((v,j) => v - this.lr*dW1[i][j]));
+    this.b1 = this.b1.map((v,j) => v - this.lr*db1[j]);
+  }
+
+  loss(out, Yin) {
+    return -out.reduce((s,row,i) => s + Yin[i].reduce((ss,v,j) => ss + v*Math.log(row[j]+1e-8), 0), 0) / out.length;
+  }
+
+  accuracy(out, Yin) {
+    let ok = 0;
+    out.forEach((row,i) => { if(row.indexOf(Math.max(...row)) === Yin[i].indexOf(1)) ok++; });
+    return (ok/out.length*100).toFixed(1);
+  }
+
+  predict(x) {
+    const out = this.forward([x]);
+    const idx = out[0].indexOf(Math.max(...out[0]));
+    return { idx, probs: out[0] };
+  }
+}
+
+let model = null;
+let trained = false;
+
+// ===================== CHARTS INIT =====================
+let lossChartInstance = null;
+const lossData = { labels:[], datasets:[{ label:'Loss', data:[], borderColor:'#00c8ff', borderWidth:1.5, pointRadius:0, tension:0.3, fill:false }] };
+
+function initDatasetCharts() {
+  // Class distribution
+  new Chart(document.getElementById('distChart'), {
+    type:'bar',
+    data:{
+      labels:['Flu','Cold','COVID-19','Healthy'],
+      datasets:[{ data:[6,5,5,4], backgroundColor:DISEASE_COLORS.map(c=>c+'cc'), borderRadius:4, borderSkipped:false }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false} },
+      scales:{
+        y:{ beginAtZero:true, max:8, ticks:{stepSize:2,color:'#6b88aa'}, grid:{color:'#1e2d42'} },
+        x:{ ticks:{color:'#6b88aa'}, grid:{display:false} }
+      }
+    }
+  });
+
+  // Symptom frequency per class
+  const symData = {
+    Flu:     [100,83,83,83,0,83],
+    Cold:    [0,100,17,17,100,0],
+    'COVID-19': [100,83,100,83,83,67],
+    Healthy: [0,0,25,0,0,0]
+  };
+  new Chart(document.getElementById('symChart'), {
+    type:'radar',
+    data:{
+      labels:['Fever','Cough','Fatigue','Headache','Sore\nThroat','Body\nAche'],
+      datasets: Object.entries(symData).map(([label,data],i)=>({
+        label, data, borderColor:DISEASE_COLORS[i], backgroundColor:DISEASE_COLORS[i]+'22',
+        borderWidth:1.5, pointRadius:3, pointBackgroundColor:DISEASE_COLORS[i]
+      }))
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{labels:{color:'#6b88aa',font:{family:'IBM Plex Mono',size:10}}} },
+      scales:{ r:{
+        min:0, max:100,
+        ticks:{color:'#3d5570',backdropColor:'transparent',stepSize:25},
+        grid:{color:'#1e2d42'}, pointLabels:{color:'#6b88aa',font:{size:10}}
+      }}
+    }
+  });
+
+  // Heatmap grouped bar
+  new Chart(document.getElementById('heatChart'), {
+    type:'bar',
+    data:{
+      labels:SYMPTOM_NAMES,
+      datasets: DISEASE_NAMES.map((label,i)=>({
+        label, data:[
+          [100,83,83,83,0,83],
+          [0,100,17,17,100,0],
+          [100,83,100,83,83,67],
+          [0,0,25,0,0,0]
+        ][i],
+        backgroundColor:DISEASE_COLORS[i]+'bb', borderRadius:3, borderSkipped:false
+      }))
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{labels:{color:'#6b88aa',font:{family:'IBM Plex Mono',size:10}}} },
+      scales:{
+        y:{ beginAtZero:true, max:110, ticks:{callback:v=>v+'%',color:'#6b88aa'}, grid:{color:'#1e2d42'} },
+        x:{ ticks:{color:'#6b88aa',font:{size:10}}, grid:{display:false} }
+      }
+    }
+  });
+}
+
+// ===================== NETWORK VIS =====================
+function drawNetwork() {
+  const svg = document.getElementById('nn-svg');
+  svg.innerHTML = '';
+  const ns = 'http://www.w3.org/2000/svg';
+  const iX=100, hX=340, oX=580, r=14;
+  const iYs=[0,1,2,3,4,5].map(i=>40+i*52);
+  const hYs=[0,1,2,3,4,5,6,7].map(i=>20+i*42);
+  const oYs=[0,1,2,3].map(i=>70+i*58);
+
+  // Connections i→h
+  iYs.forEach(iy => hYs.forEach(hy => {
+    const line = document.createElementNS(ns,'line');
+    line.setAttribute('x1',iX+r); line.setAttribute('y1',iy);
+    line.setAttribute('x2',hX-r); line.setAttribute('y2',hy);
+    line.setAttribute('stroke','#1e2d42'); line.setAttribute('stroke-width','0.5');
+    svg.appendChild(line);
+  }));
+  // Connections h→o
+  hYs.forEach(hy => oYs.forEach(oy => {
+    const line = document.createElementNS(ns,'line');
+    line.setAttribute('x1',hX+r); line.setAttribute('y1',hy);
+    line.setAttribute('x2',oX-r); line.setAttribute('y2',oy);
+    line.setAttribute('stroke','#1a2232'); line.setAttribute('stroke-width','0.5');
+    svg.appendChild(line);
+  }));
+
+  // Input neurons
+  SYMPTOM_NAMES.forEach((name,i) => {
+    const c = document.createElementNS(ns,'circle');
+    c.setAttribute('cx',iX); c.setAttribute('cy',iYs[i]); c.setAttribute('r',r);
+    c.setAttribute('fill','#0d1f35'); c.setAttribute('stroke','#185FA5'); c.setAttribute('stroke-width','1');
+    svg.appendChild(c);
+    const t = document.createElementNS(ns,'text');
+    t.setAttribute('x',iX-r-8); t.setAttribute('y',iYs[i]);
+    t.setAttribute('text-anchor','end'); t.setAttribute('dominant-baseline','central');
+    t.setAttribute('font-family','IBM Plex Mono'); t.setAttribute('font-size','10');
+    t.setAttribute('fill','#4fc3f7'); t.textContent = name;
+    svg.appendChild(t);
+  });
+
+  // Hidden neurons
+  hYs.forEach((hy,i) => {
+    const c = document.createElementNS(ns,'circle');
+    c.setAttribute('cx',hX); c.setAttribute('cy',hy); c.setAttribute('r',r);
+    c.setAttribute('fill','#15112a'); c.setAttribute('stroke','#534AB7'); c.setAttribute('stroke-width','1');
+    svg.appendChild(c);
+    const t = document.createElementNS(ns,'text');
+    t.setAttribute('x',hX); t.setAttribute('y',hy);
+    t.setAttribute('text-anchor','middle'); t.setAttribute('dominant-baseline','central');
+    t.setAttribute('font-family','IBM Plex Mono'); t.setAttribute('font-size','9');
+    t.setAttribute('fill','#AFA9EC'); t.textContent = 'h'+(i+1);
+    svg.appendChild(t);
+  });
+
+  // Output neurons
+  oYs.forEach((oy,i) => {
+    const c = document.createElementNS(ns,'circle');
+    c.setAttribute('cx',oX); c.setAttribute('cy',oy); c.setAttribute('r',r);
+    c.setAttribute('fill',DISEASE_COLORS[i]+'22'); c.setAttribute('stroke',DISEASE_COLORS[i]); c.setAttribute('stroke-width','1.5');
+    svg.appendChild(c);
+    const t = document.createElementNS(ns,'text');
+    t.setAttribute('x',oX+r+8); t.setAttribute('y',oy);
+    t.setAttribute('text-anchor','start'); t.setAttribute('dominant-baseline','central');
+    t.setAttribute('font-family','IBM Plex Mono'); t.setAttribute('font-size','11');
+    t.setAttribute('fill',DISEASE_COLORS[i]); t.textContent = DISEASE_NAMES[i];
+    svg.appendChild(t);
+  });
+
+  // Labels
+  [['Input layer\n6 neurons',iX],['Hidden layer\n8 neurons',hX],['Output layer\n4 neurons',oX]].forEach(([label,x])=>{
+    const t = document.createElementNS(ns,'text');
+    t.setAttribute('x',x); t.setAttribute('y',20);
+    t.setAttribute('text-anchor','middle');
+    t.setAttribute('font-family','IBM Plex Mono'); t.setAttribute('font-size','9');
+    t.setAttribute('fill','#3d5570'); t.textContent = label.split('\n')[0];
+    svg.appendChild(t);
+  });
+}
+
+// ===================== TRAINING =====================
+function startTraining() {
+  const epochs = parseInt(document.getElementById('ctrl-epochs').value);
+  const lr = parseFloat(document.getElementById('ctrl-lr').value);
+  const hidden = parseInt(document.getElementById('ctrl-hidden').value);
+
+  document.getElementById('train-btn').disabled = true;
+  document.getElementById('lr-display').textContent = lr;
+
+  model = new NN(6, hidden, 4, lr);
+
+  lossData.labels = [];
+  lossData.datasets[0].data = [];
+
+  if (!lossChartInstance) {
+    lossChartInstance = new Chart(document.getElementById('lossChart'), {
+      type:'line', data: lossData,
+      options:{
+        responsive:true, maintainAspectRatio:false, animation:false,
+        plugins:{ legend:{display:false} },
+        scales:{
+          y:{ type:'linear', ticks:{color:'#6b88aa'}, grid:{color:'#1e2d42'} },
+          x:{ ticks:{color:'#6b88aa', maxTicksLimit:10}, grid:{color:'#1e2d42'} }
+        }
+      }
+    });
+  } else {
+    lossChartInstance.update();
+  }
+
+  const log = document.getElementById('epoch-log');
+  log.innerHTML = '';
+
+  let epoch = 0;
+  const step = Math.max(1, Math.floor(epochs/200));
+
+  function tick() {
+    for (let i = 0; i < step && epoch < epochs; i++, epoch++) {
+      const out = model.forward(X);
+      model.backward(X, Y);
+
+      if (epoch % Math.floor(epochs/10) === 0 || epoch === epochs-1) {
+        const l = model.loss(out, Y).toFixed(4);
+        const a = model.accuracy(out, Y);
+        lossData.labels.push(epoch);
+        lossData.datasets[0].data.push(parseFloat(l));
+        lossChartInstance.update('none');
+
+        const cls = parseFloat(a) > 90 ? 'ok' : 'warn';
+        log.innerHTML += `<span class="${cls}">epoch ${String(epoch).padStart(4,' ')} | loss: ${l} | acc: ${a}%</span>\n`;
+        log.scrollTop = log.scrollHeight;
+
+        document.getElementById('acc-display').textContent = a + '%';
+        document.getElementById('loss-display').textContent = l;
+      }
+    }
+
+    document.getElementById('progress-bar').style.width = (epoch/epochs*100)+'%';
+
+    if (epoch < epochs) {
+      requestAnimationFrame(tick);
+    } else {
+      trained = true;
+      document.getElementById('train-status').textContent = 'trained';
+      document.getElementById('train-btn').disabled = false;
+      buildDiagnoseUI();
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+// ===================== DIAGNOSE =====================
+function buildDiagnoseUI() {
+  const container = document.getElementById('diagnose-content');
+  container.innerHTML = `
+    <div class="symptom-grid">
+      ${SYMPTOM_NAMES.map((s,i)=>`
+        <div class="sym-card" id="sym-${i}" onclick="toggleSym(${i})">
+          <div class="sym-indicator"></div>
+          <div class="sym-name">${s.toUpperCase()}</div>
+        </div>`).join('')}
+    </div>
+    <button class="diag-btn" onclick="runDiagnosis()">Run diagnosis</button>
+    <div class="result-box" id="result-box" style="display:none"></div>
+  `;
+}
+
+const symState = [0,0,0,0,0,0];
+function toggleSym(i) {
+  symState[i] = symState[i]===1?0:1;
+  document.getElementById('sym-'+i).classList.toggle('on', symState[i]===1);
+}
+
+function runDiagnosis() {
+  if (!model || !trained) return;
+  const res = model.predict([...symState]);
+  const disease = DISEASE_NAMES[res.idx];
+  const color = DISEASE_COLORS[res.idx];
+
+  const groups = {
+    'Respiratory': [symState[1],symState[4]],
+    'Systemic': [symState[0],symState[2],symState[5]],
+    'Neurological': [symState[3]]
+  };
+
+  const confRows = DISEASE_NAMES.map((d,i) => `
+    <div class="conf-row">
+      <div class="conf-name">${d}</div>
+      <div class="conf-bar-bg">
+        <div class="conf-bar-fill" style="width:${(res.probs[i]*100).toFixed(1)}%;background:${DISEASE_COLORS[i]}"></div>
+      </div>
+      <div class="conf-pct" style="color:${DISEASE_COLORS[i]}">${(res.probs[i]*100).toFixed(1)}%</div>
+    </div>`).join('');
+
+  const groupChips = Object.entries(groups).map(([name,vals])=>{
+    const active = vals.some(v=>v===1);
+    return `<div class="group-chip ${active?'active':''}">
+      <div class="gc-name">${name.toUpperCase()}</div>
+      <div class="gc-val">${active?'ACTIVE':'clear'}</div>
+    </div>`;
+  }).join('');
+
+  const box = document.getElementById('result-box');
+  box.style.display = 'block';
+  box.innerHTML = `
+    <div class="result-disease" style="color:${color}">${disease}</div>
+    <div style="font-family:'IBM Plex Mono';font-size:11px;color:#6b88aa">${(res.probs[res.idx]*100).toFixed(1)}% confidence</div>
+    <div class="conf-label">All class probabilities</div>
+    ${confRows}
+    <div class="conf-label">Symptom group analysis</div>
+    <div class="group-analysis">${groupChips}</div>
+    <div class="advice-box" style="border-left-color:${color}">${ADVICE[disease]}</div>
+  `;
+}
+
+// ===================== NAV =====================
+function showPanel(id) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  event.currentTarget.classList.add('active');
+
+  if (id==='diagnose' && trained && !document.querySelector('.sym-card')) buildDiagnoseUI();
+  if (id==='diagnose' && !trained) {
+    document.getElementById('diagnose-content').innerHTML=`
+      <div class="not-trained-msg">
+        <span>Model not trained yet.</span><br>
+        Go to <span>Train model</span> tab first.
+      </div>`;
+  }
+}
+
+// ===================== INIT =====================
+initDatasetCharts();
+drawNetwork();
+</script>
+</body>
+</html>

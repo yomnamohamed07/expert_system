@@ -1,0 +1,7 @@
+SELECT TOP (1000) [Id]
+      ,[Name]
+      ,[Latitude]
+      ,[Longitude]
+  FROM [TransGuide.Api1].[dbo].[Stations]
+
+ 
